@@ -1,0 +1,25 @@
+{
+  "name": "ci-cd",
+  "version": "1.0.0",
+  "description": "This is a simple Hello World frontend project built using:",
+  "main": "script.js",
+  "scripts": {
+    "lint": "eslint script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aman-Mu-sigma/Aman_CICD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aman-Mu-sigma/Aman_CICD/issues"
+  },
+  "homepage": "https://github.com/Aman-Mu-sigma/Aman_CICD#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0"
+  }
+}
