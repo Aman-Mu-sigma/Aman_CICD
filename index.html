@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World App</title>
+    <title>Simple Counter App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1 id="message">Hello World!</h1>
-        <button onclick="changeMessage()">Click Me</button>
+        <h1>Counter App</h1>
+
+        <p id="counter">0</p>
+
+        <div class="buttons">
+            <button onclick="increase()">Increase</button>
+            <button onclick="decrease()">Decrease</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+
+        <br>
+
+        <button onclick="toggleTheme()">Toggle Dark Mode</button>
     </div>
 
     <script src="script.js"></script>

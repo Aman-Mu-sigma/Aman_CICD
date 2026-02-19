@@ -1,4 +1,20 @@
-function changeMessage() {
-    const message = document.getElementById("message");
-    message.textContent = "Welcome to DevOps CI/CD Practice!";
+let count = 0;
+
+function increase() {
+    count++;
+    document.getElementById("counter").innerText = count;
+}
+
+function decrease() {
+    count--;
+    document.getElementById("counter").innerText = count;
+}
+
+function reset() {
+    count = 0;
+    document.getElementById("counter").innerText = count;
+}
+
+function toggleTheme() {
+    document.body.classList.toggle("dark");
 }
