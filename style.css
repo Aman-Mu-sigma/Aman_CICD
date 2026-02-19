@@ -1,36 +1,40 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1a1aa7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .container {
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
 }
 
 h1 {
     color: #333;
 }
 
+#counter {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
 button {
     padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
+    margin: 5px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     background-color: #007bff;
     color: white;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Dark Mode */
+
+.dark {
+    background-color: #222;
+    color: white;
 }
