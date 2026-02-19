@@ -1,0 +1,35 @@
+name: Testing Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: ./
+
+      - name: Run Smoke Tests
+        run: npm run smoke
+
+      - name: Run Functional Tests
+        run: npm run functional
+
+      - name: Run Regression Tests
+        run: npm run regression
