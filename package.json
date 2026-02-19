@@ -4,10 +4,10 @@
   "description": "This is a simple Hello World frontend project built using:",
   "main": "script.js",
   "scripts": {
-     "smoke": "cypress run --spec smoke.cy.js",
-    "functional": "cypress run --spec functional.cy.js",
-    "regression": "cypress run",
-    "lint": "eslint script.js"
+    "start": "http-server -p 3000",
+    "smoke": "cypress run --spec cypress/e2e/smoke.cy.js",
+    "functional": "cypress run --spec cypress/e2e/functional.cy.js",
+    "regression": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "cypress": "^15.10.0",
-    "eslint": "^10.0.0"
+    "eslint": "^10.0.0",
+    "http-server": "^14.1.1",
+    "serve": "^14.2.5"
   }
 }
