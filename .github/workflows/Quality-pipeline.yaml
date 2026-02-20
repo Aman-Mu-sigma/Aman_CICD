@@ -9,12 +9,8 @@ permissions:
   id-token: write
 
 jobs:
-  build-quality-deploy:
+  build-and-quality:
     runs-on: ubuntu-latest
-    
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout Code
@@ -36,19 +32,21 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_CUBE }}
 
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-build
-          path: ./
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
-      - name: Deploy
+
+  deploy:
+    needs: build-and-quality
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
