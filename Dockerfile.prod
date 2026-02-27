@@ -12,6 +12,7 @@ RUN npm install
 # Copy source code
 COPY . .
 
+
 # Stage 2: Production Stage
 FROM nginx:alpine
 
